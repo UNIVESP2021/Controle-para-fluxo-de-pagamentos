@@ -12,3 +12,15 @@ As etapas iniciais preveem.
 - Lançamento dos custos ao longo do mês.
 - Verificar a taxa de inadimplência.
 - Montar um modelo de previsão de custos versus receita anual para o planejamento das melhorias na unidade.
+
+
+### Estrutura das ramificações
+
+```mermaid
+graph TD
+  MASTER ===> Development;
+  Development --> Feature/API;
+  Development --> Feature/BD;
+  Development --> Feature/pagina;
+  Development --> Feature/Estilo;
+```
