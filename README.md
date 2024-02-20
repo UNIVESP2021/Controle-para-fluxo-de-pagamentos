@@ -13,6 +13,27 @@ As etapas iniciais preveem.
 - Verificar a taxa de inadimplência.
 - Montar um modelo de previsão de custos versus receita anual para o planejamento das melhorias na unidade.
 
+### Informações importantes
+
+O Front End deve estar dentro da pasta resources, no seguinte caminho.
+
+``ControleDePagamentos/src/main/resources/static``
+
+O banco de dados será gerado automaticamente pelo Flyway que deve ser inserido no seguinte caminho.
+
+``ControleDePagamentos/src/main/resources/db.migration``
+o nome do arquivo deve obedecer a seguinte nomenclatura.
+
+``v1__nome-do-arquivo``
+
+a cada mudança, coloca se o prefixo de forma sequencial. Por exemplo: ``v2__outro nome``
+
+a cada mudança não reescreva o que já foi executado nas versões anteriores pois os comando serão executados de forma duplicada.
+
+Para saber mais, acesse.
+
+[Documentação do Flyway](https://documentation.red-gate.com/flyway)
+
 
 ### Estrutura das ramificações
 
@@ -20,7 +41,6 @@ As etapas iniciais preveem.
 graph TD
   MASTER ===> Development;
   Development --> Feature/API;
-  Development --> Feature/BD;
   Development --> Feature/pagina;
-  Development --> Feature/Estilo;
+  Development --> Feature/estilo;
 ```
