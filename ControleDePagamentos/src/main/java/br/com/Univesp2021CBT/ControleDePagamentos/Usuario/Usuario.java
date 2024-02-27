@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 
 public class Usuario {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY);
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nome;
     private String email;
@@ -29,5 +29,18 @@ public class Usuario {
         this.email = dados.email();
         this.cargo = dados.cargo();
     }
-
+    public void atualizarInformacoes(DadosAtualizaUsuario dados) {
+        if (dados.nome() != null) {
+            this.nome = dados.nome();
+        }
+        if (dados.email() != null) {
+            this.email = dados.email();
+        }
+        if (dados.cargo() != null) {
+            this.cargo.atualizarInformacoes(dados.cargo());
+        }
+    }
+    public void excluir() {
+        this.ativo = false;
+    }
 }
