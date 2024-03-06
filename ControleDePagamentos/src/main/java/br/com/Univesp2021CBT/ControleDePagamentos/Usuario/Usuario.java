@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class Usuario {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String nome;
     private String email;
     @Enumerated(EnumType.STRING)
@@ -41,6 +41,7 @@ public class Usuario {
         }
     }
     public void excluir() {
-        this.ativo = false;
+
+        this.Ativo = false;
     }
 }
